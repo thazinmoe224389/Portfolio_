@@ -97,6 +97,14 @@ button:focus-visible {
     overflow: hidden;
 }
 
+.hero-section .col-lg-7 {
+    animation: hero-arrive .75s cubic-bezier(.2, .7, .2, 1) both;
+}
+
+.hero-section .portrait-wrap {
+    animation: hero-arrive .85s .12s cubic-bezier(.2, .7, .2, 1) both;
+}
+
 .hero-section::before {
     position: absolute;
     top: 5%;
@@ -126,6 +134,7 @@ button:focus-visible {
     background: #81a96a;
     box-shadow: 0 0 0 4px rgba(129, 169, 106, .14);
     vertical-align: 1px;
+    animation: status-pulse 2.4s ease-out infinite;
 }
 
 .hero-section h1 {
@@ -309,6 +318,18 @@ button:focus-visible {
 
 .projects-section {
     background: var(--surface);
+}
+
+.motion-ready .reveal {
+    opacity: 0;
+    transform: translateY(1.2rem);
+    transition: opacity .65s ease, transform .65s cubic-bezier(.2, .7, .2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.motion-ready .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section-heading {
@@ -613,6 +634,88 @@ button:focus-visible {
     background: #edf1e9;
 }
 
+.experience-section {
+    background: var(--page);
+}
+
+.experience-card {
+    position: relative;
+    display: flex;
+    min-height: 12rem;
+    align-items: flex-start;
+    gap: 1.4rem;
+    padding: clamp(1.4rem, 4vw, 2.4rem);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 1.2rem;
+    background: var(--surface);
+}
+
+.experience-marker {
+    display: grid;
+    width: 3.2rem;
+    height: 3.2rem;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 1rem;
+    background: #edf3e8;
+    color: var(--accent);
+    font-size: 1.15rem;
+}
+
+.experience-details {
+    max-width: 46rem;
+}
+
+.experience-details .project-type {
+    margin-bottom: .5rem;
+}
+
+.experience-details h3 {
+    margin: 0 0 .65rem;
+    font-size: clamp(1.25rem, 3vw, 1.8rem);
+    font-weight: 730;
+    letter-spacing: -.04em;
+}
+
+.experience-details h3 span {
+    color: var(--accent);
+}
+
+.experience-details > p:not(.project-type) {
+    margin-bottom: 1rem;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.experience-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .45rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.experience-tools li {
+    padding: .38rem .7rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
+    font-size: .75rem;
+    font-weight: 650;
+}
+
+.experience-label {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.4rem;
+    color: #9aa79d;
+    font-size: .63rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
 .process-card {
     position: relative;
     height: 100%;
@@ -806,6 +909,22 @@ button:focus-visible {
         padding-left: 1rem;
     }
 
+    .experience-card {
+        gap: 1rem;
+        padding-bottom: 3.7rem;
+    }
+
+    .experience-marker {
+        width: 2.7rem;
+        height: 2.7rem;
+    }
+
+    .experience-label {
+        right: 1.25rem;
+        bottom: 1.15rem;
+        font-size: .57rem;
+    }
+
     .contact-section {
         padding-bottom: 3.5rem;
     }
@@ -825,6 +944,34 @@ button:focus-visible {
     *::before,
     *::after {
         scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
+    }
+}
+
+@keyframes hero-arrive {
+    from {
+        opacity: 0;
+        transform: translateY(1.1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes status-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(129, 169, 106, .35);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(129, 169, 106, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(129, 169, 106, 0);
     }
 }
