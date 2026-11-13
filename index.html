@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">What I do</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">My approach</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link nav-contact" href="#contact">Let’s connect <span
                                 aria-hidden="true">↗</span></a></li>
@@ -82,53 +82,112 @@
                         <p class="eyebrow">SELECTED WORK</p>
                         <h2>Dashboards with a purpose.</h2>
                     </div>
-                    <p class="section-intro">A few visual explorations focused on making project data easier to scan,
-                        understand, and use.</p>
+                    <p class="section-intro">Dashboard previews that bring project progress, performance, and timing
+                        into focus.</p>
+                </div>
+
+                <div class="project-toolbar">
+                    <div class="project-filters" role="group" aria-label="Filter dashboard previews">
+                        <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All
+                            work <span>03</span></button>
+                        <button class="filter-button" type="button" data-filter="tracking" aria-pressed="false">Tracking
+                            <span>01</span></button>
+                        <button class="filter-button" type="button" data-filter="performance"
+                            aria-pressed="false">Performance <span>01</span></button>
+                        <button class="filter-button" type="button" data-filter="scheduling"
+                            aria-pressed="false">Scheduling <span>01</span></button>
+                    </div>
+                    <p class="project-count" aria-live="polite">Showing <strong>3</strong> dashboards</p>
                 </div>
 
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-4">
-                        <article class="project-card">
+                        <article class="project-card" data-category="tracking">
                             <div class="project-image-wrap">
                                 <img src="./image/proj1.png" alt="Project tracking dashboard with timeline, budget, and task charts"
                                     loading="lazy">
                             </div>
                             <div class="project-content">
-                                <p class="project-type">PROJECT TRACKING</p>
+                                <div class="project-meta"><p class="project-type">PROJECT TRACKING</p><span>01</span></div>
                                 <h3>Project Dashboard Template</h3>
-                                <p>Brings timelines, task status, budget, and pending work together in one view.</p>
+                                <p>Brings timelines, task status, budget, and pending work into one reporting view.</p>
+                                <ul class="project-tags" aria-label="Dashboard topics">
+                                    <li>Timeline</li><li>Task status</li><li>Budget</li>
+                                </ul>
+                                <button class="project-open" type="button"
+                                    data-title="Project Dashboard Template"
+                                    data-description="A single view for reviewing project schedule, task status, priority, pending items, and budget."
+                                    data-focus="Timeline · task status · budget">
+                                    View dashboard <span aria-hidden="true">↗</span>
+                                </button>
                             </div>
                         </article>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <article class="project-card">
+                        <article class="project-card" data-category="performance">
                             <div class="project-image-wrap">
                                 <img src="./image/proj2.png" alt="Dark project status dashboard with cost and performance visuals"
                                     loading="lazy">
                             </div>
                             <div class="project-content">
-                                <p class="project-type">PERFORMANCE OVERVIEW</p>
+                                <div class="project-meta"><p class="project-type">PERFORMANCE OVERVIEW</p><span>02</span></div>
                                 <h3>Project Status Dashboard</h3>
-                                <p>Highlights project cost, schedule performance, and progress across project phases.</p>
+                                <p>Summarizes project cost, schedule indicators, and progress across key phases.</p>
+                                <ul class="project-tags" aria-label="Dashboard topics">
+                                    <li>Cost</li><li>Performance</li><li>Progress</li>
+                                </ul>
+                                <button class="project-open" type="button"
+                                    data-title="Project Status Dashboard"
+                                    data-description="An at-a-glance project overview featuring cost performance, schedule indicators, and phase progress."
+                                    data-focus="Cost · performance · phase progress">
+                                    View dashboard <span aria-hidden="true">↗</span>
+                                </button>
                             </div>
                         </article>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <article class="project-card">
+                        <article class="project-card" data-category="scheduling">
                             <div class="project-image-wrap">
-                                <img src="./image/proj5.jfif" alt="Project timeline dashboard with tasks and schedule bars"
+                                <img src="./image/proj5.jfif" alt="Project management dashboard with project timeline, budget, and workload charts"
                                     loading="lazy">
                             </div>
                             <div class="project-content">
-                                <p class="project-type">DELIVERY TRACKING</p>
-                                <h3>Project Timeline Overview</h3>
-                                <p>Presents project tasks and progress across a clear schedule view.</p>
+                                <div class="project-meta"><p class="project-type">DELIVERY TRACKING</p><span>03</span></div>
+                                <h3>Team &amp; Timeline Overview</h3>
+                                <p>Brings task timing, team workload, and delivery status into a compact snapshot.</p>
+                                <ul class="project-tags" aria-label="Dashboard topics">
+                                    <li>Schedule</li><li>Workload</li><li>Delivery</li>
+                                </ul>
+                                <button class="project-open" type="button"
+                                    data-title="Team &amp; Timeline Overview"
+                                    data-description="A compact project management view combining task timelines, team workload, and delivery progress."
+                                    data-focus="Schedule · workload · delivery">
+                                    View dashboard <span aria-hidden="true">↗</span>
+                                </button>
                             </div>
                         </article>
                     </div>
                 </div>
+                <p class="projects-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Dashboard previews
+                    show the reporting focus; add each project's tools, data source, and results when you’re ready to
+                    share them.</p>
             </div>
         </section>
+
+        <dialog class="project-dialog" aria-labelledby="dialogTitle">
+            <div class="dialog-header">
+                <div>
+                    <p class="eyebrow">DASHBOARD PREVIEW</p>
+                    <h2 id="dialogTitle"></h2>
+                </div>
+                <button class="dialog-close" type="button" aria-label="Close dashboard preview">&times;</button>
+            </div>
+            <img class="dialog-image" src="" alt="">
+            <div class="dialog-caption">
+                <p id="dialogDescription"></p>
+                <p class="dialog-focus"><strong>Focus:</strong> <span id="dialogFocus"></span></p>
+            </div>
+        </dialog>
 
         <section class="section-block skills-section" id="skills">
             <div class="container">
@@ -227,6 +286,63 @@
         crossorigin="anonymous"></script>
     <script>
         document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+        const filterButtons = document.querySelectorAll(".filter-button");
+        const projectCards = document.querySelectorAll(".project-card");
+        const projectCount = document.querySelector(".project-count strong");
+
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const filter = button.dataset.filter;
+                let visibleCount = 0;
+
+                filterButtons.forEach((filterButton) => {
+                    const isActive = filterButton === button;
+                    filterButton.classList.toggle("is-active", isActive);
+                    filterButton.setAttribute("aria-pressed", String(isActive));
+                });
+
+                projectCards.forEach((card) => {
+                    const isVisible = filter === "all" || card.dataset.category === filter;
+                    card.closest(".col-md-6").hidden = !isVisible;
+                    visibleCount += Number(isVisible);
+                });
+
+                projectCount.textContent = visibleCount;
+            });
+        });
+
+        const projectDialog = document.querySelector(".project-dialog");
+        const dialogImage = document.querySelector(".dialog-image");
+
+        document.querySelectorAll(".project-open").forEach((button) => {
+            button.addEventListener("click", () => {
+                const card = button.closest(".project-card");
+                const image = card.querySelector("img");
+
+                document.getElementById("dialogTitle").textContent = button.dataset.title;
+                document.getElementById("dialogDescription").textContent = button.dataset.description;
+                document.getElementById("dialogFocus").textContent = button.dataset.focus;
+                dialogImage.src = image.src;
+                dialogImage.alt = image.alt;
+                projectDialog.showModal();
+            });
+        });
+
+        document.querySelector(".dialog-close").addEventListener("click", () => {
+            projectDialog.close();
+        });
+
+        projectDialog.addEventListener("cancel", (event) => {
+            event.preventDefault();
+            projectDialog.close();
+        });
+
+        projectDialog.addEventListener("click", (event) => {
+            if (event.target === projectDialog) {
+                projectDialog.close();
+            }
+        });
     </script>
 </body>
 
